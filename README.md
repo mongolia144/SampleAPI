@@ -44,6 +44,7 @@ This project is intentionally lightweight, making it ideal for portfolio review,
 
 ## 📁 Project Structure
 
+```text
 SampleAPI/
 │
 ├── Controllers/
@@ -56,6 +57,7 @@ SampleAPI/
 ├── SampleAPI.csproj
 └── Properties/
     └── launchSettings.json
+
 ---
 
 ## 🚀 Running the Project
