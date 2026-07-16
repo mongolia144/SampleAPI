@@ -55,8 +55,7 @@ SampleAPI/
 ├── Program.cs
 ├── SampleAPI.csproj
 └── Properties/
-    └── launchSettings.json
-
+└── launchSettings.json
 ---
 
 ## 🚀 Running the Project
