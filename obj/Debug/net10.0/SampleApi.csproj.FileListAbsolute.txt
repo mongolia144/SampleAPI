@@ -37,3 +37,4 @@ C:\Users\mark_\source\repos\SampleApi\obj\Debug\net10.0\ref\SampleApi.dll
 C:\Users\mark_\source\repos\SampleApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\mark_\source\repos\SampleApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\mark_\source\repos\SampleApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mark_\source\repos\SampleApi\obj\Debug\net10.0\SampleApi.sourcelink.json

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SampleApi.Data;
-using Microsoft.AspNetCore.OpenApi; // ✔ correct Swagger namespace for .NET 10
+using Microsoft.AspNetCore.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,28 +17,16 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-/*
-    NORMAL / INDUSTRY STANDARD BEHAVIOR
-    Swagger normally enabled only in Development.
-    Example of the standard approach:
-
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
-*/
-
-/*
-    DEMO / PORTFOLIO BEHAVIOR (INTENTIONAL)
-    Swagger enabled for ALL environments.
-*/
-
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+// ⭐ Swagger only in Development:
+// Set "ASPNETCORE_ENVIRONMENT": "Development"
+if (app.Environment.IsDevelopment())
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API v1");
-});
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API v1");
+    });
+}
 
 app.MapControllers();
 
