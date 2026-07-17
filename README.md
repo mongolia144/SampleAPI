@@ -48,11 +48,15 @@ This project is intentionally lightweight, making it ideal for portfolio review,
 SampleAPI/
 │
 ├── Controllers/
-│   └── YourControllersHere.cs
-│
+│   └── MoviesController.cs
 ├── Data/
 │   └── AppDbContext.cs
-│
+├── Interfaces/
+│   └── IMovieRepositiory.cs
+├── Models/
+│   └── Movie.cs
+├── Repositories/
+│   └── MovieRepository.cs│
 ├── Program.cs
 ├── SampleAPI.csproj
 └── Properties/
