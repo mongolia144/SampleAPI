@@ -2,6 +2,8 @@ using SampleApi.Models;
 using SampleApi.Data;
 using Microsoft.EntityFrameworkCore;
 
+
+
 public class MovieRepository : IMovieRepository
 {
     //ASYNC RULE
@@ -25,6 +27,7 @@ public class MovieRepository : IMovieRepository
         return await _db.Movies.FindAsync(id);
     }
 
+  
     public async Task Add(Movie movie)
     {
         _db.Movies.Add(movie);        
@@ -32,6 +35,7 @@ public class MovieRepository : IMovieRepository
         //EF Core generates the Id, assigns it to movie.Id, that we just passed in as a parameter and tracks it.
         //So after SaveChangesAsync(), your movie object already contains the generated Id.
     }
+    
 
     public async Task Update(Movie movie)
     {

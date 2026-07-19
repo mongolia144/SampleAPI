@@ -5,6 +5,8 @@ using SampleApi.DTOs.Movies;
 namespace SampleApi.Controllers;
 using SampleApi.Services.MovieServices;
 using SampleApi.Interfaces.MovieInterfaces;
+using Microsoft.AspNetCore.Authorization;
+
 
 //using the repositiory pattern
 //ASYNC RULE
@@ -41,6 +43,7 @@ public class MoviesController : ControllerBase
         return MovieDTORead;
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create(MovieDTOAdd movieDTOAdd)
     {
@@ -60,6 +63,7 @@ public class MoviesController : ControllerBase
         // It tells the compiler:I know this value is not null here — trust me.
     }
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, MovieDTOUpdate movieDTOUpdate)
     {
@@ -69,6 +73,7 @@ public class MoviesController : ControllerBase
         return Ok(serviceResult.Data);
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
