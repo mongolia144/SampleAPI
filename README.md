@@ -43,7 +43,7 @@ SampleApi/
 │   │     └── AppDbContext.cs
 ├   ├── DTO/
 │   │     ├── Auth/
-│   │     │    └──AuthResponseDTO.cs
+│   │     │   ├── AuthResponseDTO.cs
 │   │     ├── LoginDTO.cs
 │   │     ├── MovieDTOAdd.cs
 │   │     ├── MovieDTOAdd.cs
@@ -66,8 +66,8 @@ SampleApi/
 │   ├───Results/
 │   │      └── ServiceResults.cs
 │   ├───Services/
-│   │      ├── AuthServices
-│   │      │    └── AuthService.cs
+│   │      ├── AuthServices/
+│   │      │   ├─── AuthService.cs
 │   │      └── MovieService.cs
 │   ├───Validators/
 │   │      ├── MovieValidator.cs
