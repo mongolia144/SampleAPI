@@ -76,7 +76,7 @@ SampleApi/
 │   ├───SampleAPI.csproj
 │   └───Properties/
 │          └── launchSettings.json
-└── SampleAPI.Api/
+└── SampleAPI.Test/
 </pre>
 
 ---
