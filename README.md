@@ -14,6 +14,7 @@ Designed for clarity, testability, and minimal dependencies.
 - **Repository + Service** Layer architecture
 - **DTOs + Validation Layer**
 - **ServiceResult pattern** for consistent responses
+- **Password Hashing** for for security
 - Minimal Program.cs
 - **No Swagger / OpenAPI** (removed for cleaner architecture)
 - Fully testable using **Postman, Insomnia**, or any REST client
@@ -329,7 +330,7 @@ From the project root: dotnet test
 
 - Add a real database (SQL Server / PostgreSQL)
 - Add role‑based authorization
-- Add password hashing + registration
+- Add password registration
 - Add unit tests ( task ongoing).
 - Add CI/CD pipeline
 - Add API versioning
