@@ -1,8 +1,39 @@
-- name: Run VSTest with coverage
-  run: dotnet msbuild SampleApi.Test/SampleApi.Test.csproj /t:VSTest /p:Configuration=Release /p:VSTestCollect="XPlat Code Coverage"
+name: CI
 
-- name: Upload coverage report
-  uses: actions/upload-artifact@v4
-  with:
-    name: coverage
-    path: SampleApi.Test/TestResults/
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore SampleApi.sln
+
+    - name: Build solution
+      run: dotnet build SampleApi.sln --configuration Release --no-restore
+
+    - name: Run VSTest with coverage
+      run: |
+        dotnet msbuild SampleApi.Test/SampleApi.Test.csproj \
+          /t:VSTest \
+          /p:Configuration=Release \
+          /p:VSTestCollect="XPlat Code Coverage"
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage
+        path: SampleApi.Test/TestResults/
